@@ -15,11 +15,11 @@ public class ControllerFactory {
         controllerMap.put("GET/updateUser", new ShowPageController("updateUser"));
         controllerMap.put("POST/login", new LoginController());
         controllerMap.put("POST/updateUser", new UpdateUserController());
-        controllerMap.put("GET/updateProceed", new ShowPageController("updateProceed"));
-        controllerMap.put("POST/updateProceed", new UpdateProceedController());
-        controllerMap.put("GET/userUpdated", new ShowPageController("userUpdated"));
-        controllerMap.put("GET/userDelete", new ShowPageController("userDelete"));
-        controllerMap.put("POST/userDelete", new DeleteUserController());
+        controllerMap.put("POST/updateUserProceed", new UpdatePrController());
+        controllerMap.put("GET/updateUserProceed", new ShowPageController("updateUserProceed"));
+        controllerMap.put("GET/updatedUser", new ShowPageController("updatedUser"));
+        controllerMap.put("GET/deleteUser", new ShowPageController("deleteUser"));
+        controllerMap.put("POST/deleteUser", new DeleteUserController());
     }
 
     public Controller getController(HttpServletRequest request) {

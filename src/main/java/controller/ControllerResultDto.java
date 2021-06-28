@@ -1,5 +1,7 @@
 package controller;
 
+import entity.User;
+
 public class ControllerResultDto {
     private final String view;
 
@@ -9,5 +11,12 @@ public class ControllerResultDto {
 
     public String getView() {
         return view;
+    }
+
+    public boolean isRedirect() {
+        if (view.contains("Proceed"))
+            return true;
+        else
+            return false;
     }
 }

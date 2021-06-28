@@ -27,7 +27,7 @@
                     <p class="card-text">Choose the option:</p>
                     <a href="/CRM_war/add" style="width: 6rem;" class="btn btn-primary m-1">Create</a>
                     <a href="/CRM_war/CRM_war/updateUser" style="width: 6rem;" class="btn btn-primary m-1">Update</a>
-                    <a href="/CRM_war/CRM_war/userdelete" style="width: 6rem;" class="btn btn-primary m-1">Delete</a>
+                    <a href="/CRM_war/CRM_war/deleteUser" style="width: 6rem;" class="btn btn-primary m-1">Delete</a>
                     <a href="/CRM_war/list" style="width: 6rem;" class="btn btn-primary m-1">See all</a>
                 </div>
             </div>

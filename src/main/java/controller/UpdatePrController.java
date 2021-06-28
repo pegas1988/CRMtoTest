@@ -7,10 +7,21 @@ import service.UserService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class UpdateProceedController implements Controller {
+public class UpdatePrController implements Controller {
     UserService userService = new UserService();
+
     @Override
-    public ControllerResultDto execute(@org.jetbrains.annotations.NotNull HttpServletRequest req, HttpServletResponse resp) {
+    public void setString(String line) {
+
+    }
+
+    @Override
+    public String getString() {
+        return null;
+    }
+
+    @Override
+    public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
         String userName = req.getParameter("firstName");
         String userLastName = req.getParameter("lastName");
         String userRole = req.getParameter("userRole");
@@ -22,6 +33,6 @@ public class UpdateProceedController implements Controller {
         user.setUserRole(roles.valueOf(userRole));
         userService.updateUser(user);
         req.setAttribute("user", user);
-        return new ControllerResultDto("userUpdated");
+        return new ControllerResultDto("login");
     }
 }

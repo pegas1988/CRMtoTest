@@ -12,6 +12,16 @@ public class ShowPageController implements Controller {
     }
 
     @Override
+    public void setString(String line) {
+
+    }
+
+    @Override
+    public String getString() {
+        return null;
+    }
+
+    @Override
     public ControllerResultDto execute(HttpServletRequest req, HttpServletResponse resp) {
         return new ControllerResultDto(VIEW_NAME);
     }

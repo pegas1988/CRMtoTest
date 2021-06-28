@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/CRM_war/userdelete")
+@WebServlet("/CRM_war/deleteUser")
 public class DeleteUserServlet extends HttpServlet {
     private UserService userService = new UserService();
 
@@ -21,7 +21,7 @@ public class DeleteUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<User> listOfUsers = userService.findAllUsers();
         req.setAttribute("list", listOfUsers);
-        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/userdelete.jsp");
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/jsp/deleteUser.jsp");
         requestDispatcher.forward(req,resp);
     }
 
@@ -32,6 +32,6 @@ public class DeleteUserServlet extends HttpServlet {
 
         User user = new User(name, lastName);
         userService.deleteFromUser(user);
-        req.getRequestDispatcher("/WEB-INF/jsp/userdelete.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsp/deleteUser.jsp").forward(req, resp);
     }
 }
