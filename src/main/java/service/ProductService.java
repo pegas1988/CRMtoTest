@@ -1,27 +1,29 @@
 package service;
 
-import dao.ProductDao;
+import dao.impl.ProductDaoImpl;
 import entity.Product;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductService {
-    ProductDao productDao = new ProductDao();
+    ProductDaoImpl productDaoImpl = new ProductDaoImpl();
 
     public List<Product> findAllProducts() {
-        return productDao.findAll();
+        return productDaoImpl.findAll();
     }
 
     public void createProduct(Product product) {
-        productDao.create(product);
+        productDaoImpl.create(product);
 
     }
 
     public void deleteByName(Product product) {
-        productDao.deleteFromProduct(product);
+        productDaoImpl.deleteFromProduct(product);
     }
 
     public int getIDByName(Product product) {
-        return productDao.productID(product);
+        return productDaoImpl.productID(product);
     }
 }

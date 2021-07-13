@@ -1,12 +1,14 @@
 package service;
 
-import dao.MaterialDao;
+import dao.impl.MaterialDaoImpl;
 import entity.Material;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MaterialService {
-    MaterialDao materialDao = new MaterialDao();
+    MaterialDaoImpl materialDao = new MaterialDaoImpl();
 
     public void createMaterial(Material material) {
         materialDao.createNewMaterial(material);

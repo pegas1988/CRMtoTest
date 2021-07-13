@@ -1,13 +1,26 @@
 package service;
 
 import dao.ClientDao;
+import dao.impl.ClientDaoImpl;
 import entity.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Objects;
 
+@Component
 public class ClientService {
-    ClientDao clientDao = new ClientDao();
+
+
+    private ClientDao clientDao;
+
+    public ClientService(ClientDao clientDao) {
+        this.clientDao = clientDao;
+    }
+
+    public ClientService() {
+    }
 
     public List<Client> findAll() {
         List<Client> allClients = clientDao.findAll();

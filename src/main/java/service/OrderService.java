@@ -1,14 +1,15 @@
 package service;
 
-import dao.OrderDao;
+import dao.impl.OrderDaoImpl;
 import entity.Order;
-import entity.Product;
+import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.util.List;
 
+@Service
 public class OrderService {
-    OrderDao orderDao = new OrderDao();
+    OrderDaoImpl orderDao = new OrderDaoImpl();
 
     public void createOrder(Order order, List<String> products) {
         orderDao.create(order, products);
